@@ -29,4 +29,9 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
+
+    //Controllers
+    $container['PersonaController'] = function ($c) {
+        return new \App\Controllers\PersonaController($c);
+    };
 };

@@ -4,7 +4,7 @@ subtitle %} Personas {% endblock %} {% block css %}
 
 {% endblock %} {% block body%}
 <div class="row justify-content-between m-2">
-  <a href="{{ path_for('personacrear') }}" class="btn btn-danger col-md-2 "
+  <a href="{{ path_for('persona.crear') }}" class="btn btn-danger col-md-2 "
     >Nueva Persona</a
   >
   <input
@@ -102,9 +102,9 @@ subtitle %} Personas {% endblock %} {% block css %}
         "</td><td class='text-right'>" +
         item.documento +
         "</td><td class='text-center'>\
-        <a href='{{ path_for('personaver') }}'><i class='fas fa-eye'></i></a>&nbsp;\
-        <a href='{{ path_for('personamodificar') }}'><i class='fas fa-edit'></i></a>&nbsp;\
-        <a href='{{ path_for('personaeliminar') }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
+        <a href='{{ path_for('persona.ver') }}'><i class='fas fa-eye'></i></a>&nbsp;\
+        <a href='{{ path_for('persona.modificar') }}'><i class='fas fa-edit'></i></a>&nbsp;\
+        <a href='{{ path_for('persona.eliminar') }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
     });
     html += "</tbody></table>";
     return html;

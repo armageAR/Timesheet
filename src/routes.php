@@ -11,24 +11,13 @@ return function (App $app) {
         return $this->view->render($response, 'home.html');
     })->setName('home');
 
-
-
-    $app->get('/admin/personas', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'personas/index.html');
-    })->setName('personas');
-    $app->get('/admin/persona-crear', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'personas/create.html');
-    })->setName('personacrear');
-    $app->get('/admin/persona-ver', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'personas/view.html');
-    })->setName('personaver');
-    $app->get('/admin/persona-modificar', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'personas/update.html');
-    })->setName('personamodificar');
-    $app->get('/admin/persona-eliminar', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'personas/delete.html');
-    })->setName('personaeliminar');
-
+    $app->group('/personas', function () use ($app) {
+        $app->get('/listar', 'PersonaController:listar')->setName('personas');
+        $app->get('/crear', 'PersonaController:crear')->setName('persona.crear');
+        $app->get('/ver', 'PersonaController:ver')->setName('persona.ver');
+        $app->get('/modificar', 'PersonaController:modificar')->setName('persona.modificar');
+        $app->get('/eliminar', 'PersonaController:eliminar')->setName('persona.eliminar');
+    });
 
 
 
