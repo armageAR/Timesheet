@@ -14,9 +14,9 @@ return function (App $app) {
     $app->group('/personas', function () use ($app) {
         $app->get('/listar', 'PersonaController:listar')->setName('personas');
         $app->get('/crear', 'PersonaController:crear')->setName('persona.crear');
-        $app->get('/ver', 'PersonaController:ver')->setName('persona.ver');
-        $app->get('/modificar', 'PersonaController:modificar')->setName('persona.modificar');
-        $app->get('/eliminar', 'PersonaController:eliminar')->setName('persona.eliminar');
+        $app->get('/ver/{id}', 'PersonaController:ver')->setName('persona.ver');
+        $app->get('/modificar/{id}', 'PersonaController:modificar')->setName('persona.modificar');
+        $app->get('/eliminar/{id}', 'PersonaController:eliminar')->setName('persona.eliminar');
     });
 
 

@@ -1,5 +1,5 @@
-{% extends 'layout.html' %} {% block title %}Personas {% endblock %} {% block
-subtitle %} Personas {% endblock %} {% block css %}
+{% extends 'layout.html' %} {% block title %} {{ titulo }} {% endblock %} {%
+block subtitle %} {{ titulo }} {% endblock %} {% block css %}
 <link rel="stylesheet" href="{{ base_url() }}/css/pagination.css" />
 
 {% endblock %} {% block body%}
@@ -24,57 +24,8 @@ subtitle %} Personas {% endblock %} {% block css %}
 {% endblock %} {% block javascripts %}
 <script src="{{ base_url() }}/js/pagination.min.js"></script>
 <script>
-  let personas = [
-    {
-      id: 1,
-      nombre: "SANTOPIETRO, Daniel ",
-      nacionalidad: "Argentina",
-      residencia: "Buenos Aires (Argentina)",
-      documento: "DNI - 14325654"
-    },
-    {
-      id: 2,
-      nombre: "POODTS, Eduardo ",
-      nacionalidad: "Argentina",
-      residencia: "CABA (Argentina)",
-      documento: "DNI - 11546987"
-    },
-    {
-      id: 3,
-      nombre: "NAUMANN, Guillermo Federico",
-      nacionalidad: "Argentina",
-      residencia: "CABA (Argentina)",
-      documento: "DNI - 11546987"
-    },
-    {
-      id: 4,
-      nombre: "RUIZ, German Antonio",
-      nacionalidad: "Argentina",
-      residencia: "Chubut (Argentina)",
-      documento: "DNI - 11546987"
-    },
-    {
-      id: 5,
-      nombre: "CARO,  Martin",
-      nacionalidad: "Argentina",
-      residencia: "Santa Fe (Argentina)",
-      documento: "DNI - 11546987"
-    },
-    {
-      id: 6,
-      nombre: "DOTREMONT, Cristian",
-      nacionalidad: "Argentina",
-      residencia: "CABA (Argentina)",
-      documento: "DNI - 11546987"
-    },
-    {
-      id: 7,
-      nombre: "PEREZ CAÑADAS MARIO RAMON",
-      nacionalidad: "Argentina",
-      residencia: "CABA (Argentina)",
-      documento: "DNI - 11546987"
-    }
-  ];
+  let personas = {{personas|json_encode|raw}};
+
 
   function tableTemplating(data) {
     html =
@@ -90,23 +41,26 @@ subtitle %} Personas {% endblock %} {% block css %}
                     </thead>\
                     <tbody>';
     $.each(data, function(index, item) {
+
       html +=
-        '<tr><td class="text-center">' +
+        "<tr><td class='text-center'>" +
         item.id +
         "</td><td>" +
-        item.nombre +
+        item.nombre + ' ' + item.apellido +
         "</td><td>" +
-        item.residencia +
+        item.dirPais + ' (' + item.dirEstado +')'+
         "</td><td>" +
         item.nacionalidad +
         "</td><td class='text-right'>" +
-        item.documento +
-        "</td><td class='text-center'>\
-        <a href='{{ path_for('persona.ver') }}'><i class='fas fa-eye'></i></a>&nbsp;\
-        <a href='{{ path_for('persona.modificar') }}'><i class='fas fa-edit'></i></a>&nbsp;\
-        <a href='{{ path_for('persona.eliminar') }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
+        item.docTipo + ' - ' + item.docNumero +
+        "</td><td class='text-center'>" +
+        "<a href='{{ path_for('persona.ver', { 'id': 'index' }) }}'><i class='fas fa-eye'></i></a>&nbsp;\
+        <a href='{{ path_for('persona.modificar', { 'id': 'index' }) }}'><i class='fas fa-edit'></i></a>&nbsp;\
+        <a href='{{ path_for('persona.eliminar', { 'id': 'index' }) }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
+        html = html.replace(/index/g, index);
     });
     html += "</tbody></table>";
+
     return html;
   }
 
