@@ -43,4 +43,7 @@ return function (App $app) {
     $container['TipoCategoriaController'] = function ($c) {
         return new \App\Controllers\TipoCategoriaController($c);
     };
+    $container['ActividadController'] = function ($c) {
+        return new \App\Controllers\ActividadController($c);
+    };
 };

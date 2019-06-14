@@ -39,4 +39,11 @@ return function (App $app) {
         $app->get('/modificar/{id}', 'TipoCategoriaController:modificar')->setName('tipoCategoria.modificar');
         $app->get('/eliminar/{id}', 'TipoCategoriaController:eliminar')->setName('tipoCategoria.eliminar');
     });
+    $app->group('/actividades', function () use ($app) {
+        $app->get('/listar', 'ActividadController:listar')->setName('actividades');
+        $app->get('/crear', 'ActividadController:crear')->setName('actividad.crear');
+        $app->get('/ver/{id}', 'ActividadController:ver')->setName('actividad.ver');
+        $app->get('/modificar/{id}', 'ActividadController:modificar')->setName('actividad.modificar');
+        $app->get('/eliminar/{id}', 'ActividadController:eliminar')->setName('actividad.eliminar');
+    });
 };
