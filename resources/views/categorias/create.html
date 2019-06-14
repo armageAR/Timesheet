@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {% block title %}Nueva Categoria {% endblock %} {%
+block subtitle %} Nueva Categoria {% endblock %} {% block css %} {% endblock %}
+{%block body%}
+<form>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Codigo</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputText" />
+    </div>
+
+    <label for="inputText" class="col-sm-2 col-form-label">Detalle</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputText" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Convenio</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputText" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label"
+      >Tipo Categoria</label
+    >
+    <div class="col-sm-4">
+      <select id="inputState" class="form-control">
+        <option selected>Seleccionar</option>
+        <option>Bandera Argentina</option>
+        <option>Bandera Belga</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row justify-content-center">
+    <a href="{{ path_for('categorias') }}" class="btn btn-danger m-3"
+      >Cancelar</a
+    >
+    <a href="{{ path_for('categorias') }}" class="btn btn-primary m-3"
+      >Grabar</a
+    >
+  </div>
+</form>
+
+{% endblock %} {% block javascripts %} {% endblock %}

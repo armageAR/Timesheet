@@ -1,0 +1,187 @@
+{% extends 'layout.html' %} {% block title %}Modificar Persona {% endblock %} {%
+block subtitle %} Modificar Persona {% endblock %} {% block css %} {% endblock
+%} {%block body%}
+<form>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-1 col-form-label">Nombre</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="inputText" value="Daniel" />
+    </div>
+
+    <label for="inputText" class="col-sm-1 col-form-label">Apellido</label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        class="form-control"
+        id="inputText"
+        value="Santopietro"
+      />
+    </div>
+  </div>
+  <hr />
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-1 col-form-label">Dirección</label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        class="form-control"
+        id="inputText"
+        placeholder="Calle"
+        value="Nuestra Sra. del Buen Viaje"
+      />
+    </div>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control text-right"
+        id="inputText"
+        placeholder="Número"
+        value="2541"
+      />
+    </div>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control text-right"
+        id="inputText"
+        placeholder="Piso"
+        value="--"
+      />
+    </div>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control text-right"
+        id="inputText"
+        placeholder="Unidad"
+        value="--"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4">
+      <select id="inputState" class="form-control">
+        <option selected>Argentina</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-sm-4">
+      <select id="inputState" class="form-control">
+        <option selected>Buenos Aires</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-sm-4">
+      <select id="inputState" class="form-control">
+        <option selected>Morón</option>
+        <option>...</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Código Postal</label>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control text-right"
+        id="inputText"
+        value="1706"
+      />
+    </div>
+  </div>
+  <hr />
+
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Telefono</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        class="form-control"
+        id="inputText"
+        value="11 4624-9546"
+      />
+    </div>
+    <label for="inputText" class="col-sm-1 col-form-label">eMail</label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        class="form-control"
+        id="inputText"
+        value="santopietrodaniel@gmail.com"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Documento</label>
+    <div class="col-sm-2">
+      <select id="inputState" class="form-control">
+        <option>DNI</option>
+        <option>DNI</option>
+        <option>Pasaporte</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control text-right"
+        id="inputText"
+        placeholder="Número"
+        value="14325654"
+      />
+    </div>
+    <label for="inputText" class="col-sm-1 col-form-label">Legajo</label>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control text-right"
+        id="inputText"
+        value="10096"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">ID Fiscal</label>
+    <div class="col-sm-2">
+      <select id="inputState" class="form-control">
+        <option selected>CUIT</option>
+        <option>CUIT</option>
+        <option>CUIL</option>
+        <option>RUT</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <input
+        type="text"
+        class="form-control"
+        id="inputText"
+        placeholder="Número"
+        value="20-14325654-3"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Nacionalidad</label>
+    <div class="col-sm-4">
+      <select id="inputState" class="form-control">
+        <option selected>Argentina</option>
+        <option>...</option>
+      </select>
+    </div>
+    <label for="inputText" class="col-sm-1 col-form-label">Idioma</label>
+    <div class="col-sm-5">
+      <select id="inputState" class="form-control">
+        <option selected>Castellano</option>
+        <option>...</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row justify-content-center">
+    <a href="{{ path_for('personas') }}" class="btn btn-danger m-3">Cancelar</a>
+    <a href="{{ path_for('personas') }}" class="btn btn-primary m-3"
+      >Modificar</a
+    >
+  </div>
+</form>
+
+{% endblock %} {% block javascripts %} {% endblock %}

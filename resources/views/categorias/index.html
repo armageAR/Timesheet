@@ -1,0 +1,100 @@
+{% extends 'layout.html' %} {% block title %}Categorias {% endblock %} {% block
+subtitle %} Categorias {% endblock %} {% block css %}
+<link rel="stylesheet" href="{{ base_url() }}/css/pagination.css" />
+
+{% endblock %} {% block body%}
+<div class="row justify-content-between m-2">
+  <a href="{{ path_for('categoriacrear') }}" class="btn btn-danger col-md-2 "
+    >Nueva Categoria</a
+  >
+  <input
+    class="form-control   col-md-3"
+    type="text"
+    placeholder="Buscar"
+    aria-label="Search"
+  />
+</div>
+
+<div id="data-container"></div>
+
+<div class="row justify-content-center m-3">
+  <div id="pagination-container"></div>
+</div>
+
+{% endblock %} {% block javascripts %}
+<script src="{{ base_url() }}/js/pagination.min.js"></script>
+<script>
+  let categorias = [
+    {
+      codigo: "CAPUMGAS01",
+      detalle: "CAPITÁN DE ULTRAMAR",
+      convenio: "CCUOMM",
+      tipocate: "Bandera Argentina"
+    },
+    {
+      codigo: "ENFROGAS01",
+      detalle: "ENFERMERO",
+      convenio: "CCUOMM",
+      tipocate: "Bandera Argentina"
+    },
+    {
+      codigo: "CMAESGAS01",
+      detalle: "CONTRAMAESTRE",
+      convenio: "CCUOMM",
+      tipocate: "Bandera Argentina"
+    },
+    {
+      codigo: "ELECTGAS01",
+      detalle: "ELECTRICISTA",
+      convenio: "CCUOMM",
+      tipocate: "Bandera Argentina"
+    },
+    {
+      codigo: "TEROFBEL02",
+      detalle: "3/O",
+      convenio: "",
+      tipocate: "Bandera Belga"
+    }
+  ];
+
+  function tableTemplating(data) {
+    html =
+      '<table class="table table-striped table-bordered"> \
+                    <thead class = "thead-dark" > <tr class="text-center">\
+                            <th scope="col">Código</th>\
+                            <th scope="col">Detalle</th>\
+                            <th scope="col">Convenio</th>\
+                            <th scope="col">Tipo Categoria</th>\
+                            <th scope="col">Acciones</th>\
+                        </tr>\
+                    </thead>\
+                    <tbody>';
+    $.each(data, function(index, item) {
+      html +=
+        '<tr><td class="text-center">' +
+        item.codigo +
+        "</td><td>" +
+        item.detalle +
+        "</td><td>" +
+        item.convenio +
+        "</td><td>" +
+        item.tipocate +
+        "</td><td class='text-center'>\
+        <a href='{{ path_for('categoriaver') }}'><i class='fas fa-eye'></i></a>&nbsp;\
+        <a href='{{ path_for('categoriamodificar') }}'><i class='fas fa-edit'></i></a>&nbsp;\
+        <a href='{{ path_for('categoriaeliminar') }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  $("#pagination-container").pagination({
+    dataSource: categorias,
+    pageSize: 5,
+    callback: function(data, pagination) {
+      var html = tableTemplating(data);
+      $("#data-container").html(html);
+    }
+  });
+</script>
+{% endblock %}

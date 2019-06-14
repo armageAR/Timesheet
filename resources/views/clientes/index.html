@@ -1,0 +1,157 @@
+{% extends 'layout.html' %} {% block title %}Empresas {% endblock %} {% block
+subtitle %} Empresas {% endblock %} {% block css %}
+<link rel="stylesheet" href="{{ base_url() }}/css/pagination.css" />
+
+{% endblock %} {% block body%}
+<div class="row justify-content-between m-2">
+  <a href="{{ path_for('clientecrear') }}" class="btn btn-danger col-md-2 "
+    >Nueva Empresa</a
+  >
+  <input
+    class="form-control   col-md-3"
+    type="text"
+    placeholder="Buscar"
+    aria-label="Search"
+  />
+</div>
+
+<div id="data-container"></div>
+
+<div class="row justify-content-center m-3">
+  <div id="pagination-container"></div>
+</div>
+
+{% endblock %} {% block javascripts %}
+<script src="{{ base_url() }}/js/pagination.min.js"></script>
+<script>
+  let empresas = [
+    {
+      id: 1,
+      razonSocial: "Oil Petroleo",
+      idFiscal: "30-74325654-5",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "USA"
+    },
+    {
+      id: 2,
+      razonSocial: "Comañia del Sol SL",
+      idFiscal: "30-71165731-9",
+      radicacion: "Santiago de Chile (Chile)",
+      nacionalidad: "Chilena"
+    },
+    {
+      id: 3,
+      razonSocial: "Laguna Seca SA",
+      idFiscal: "30-71488885-0",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "Argentina"
+    },
+    {
+      id: 4,
+      razonSocial: "Terreno Virgen SA",
+      idFiscal: "33-71252908-9",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "Española"
+    },
+    {
+      id: 1,
+      razonSocial: "Oil Petroleo",
+      idFiscal: "30-74325654-5",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "USA"
+    },
+    {
+      id: 2,
+      razonSocial: "Comañia del Sol SL",
+      idFiscal: "30-71165731-9",
+      radicacion: "Santiago de Chile (Chile)",
+      nacionalidad: "Chilena"
+    },
+    {
+      id: 3,
+      razonSocial: "Laguna Seca SA",
+      idFiscal: "30-71488885-0",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "Argentina"
+    },
+    {
+      id: 4,
+      razonSocial: "Terreno Virgen SA",
+      idFiscal: "33-71252908-9",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "Española"
+    },
+    {
+      id: 1,
+      razonSocial: "Oil Petroleo",
+      idFiscal: "30-74325654-5",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "USA"
+    },
+    {
+      id: 2,
+      razonSocial: "Comañia del Sol SL",
+      idFiscal: "30-71165731-9",
+      radicacion: "Santiago de Chile (Chile)",
+      nacionalidad: "Chilena"
+    },
+    {
+      id: 3,
+      razonSocial: "Laguna Seca SA",
+      idFiscal: "30-71488885-0",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "Argentina"
+    },
+    {
+      id: 4,
+      razonSocial: "Terreno Virgen SA",
+      idFiscal: "33-71252908-9",
+      radicacion: "Buenos Aires (Argentina)",
+      nacionalidad: "Española"
+    }
+  ];
+
+  function tableTemplating(data) {
+    html =
+      '<table class="table table-striped table-bordered"> \
+                    <thead class = "thead-dark" > <tr class="text-center">\
+                            <th style="width:2%" scope="col">#</th>\
+                            <th scope="col">Razon Social</th>\
+                            <th scope="col">ID Fiscal</th>\
+                            <th scope="col">Radicación</th>\
+                            <th scope="col">Nacionalidad</th>\
+                            <th scope="col">Acciones</th>\
+                        </tr>\
+                    </thead>\
+                    <tbody>';
+    $.each(data, function(index, item) {
+      html +=
+        '<tr><td class="text-center">' +
+        item.id +
+        "</td><td>" +
+        item.razonSocial +
+        "</td><td>" +
+        item.idFiscal +
+        "</td><td>" +
+        item.radicacion +
+        "</td><td>" +
+        item.nacionalidad +
+        "</td><td class='text-center'>\
+        <a href='{{ path_for('clientever') }}'><i class='fas fa-eye'></i></a>&nbsp;\
+        <a href='{{ path_for('clientemodificar') }}'><i class='fas fa-edit'></i></a>&nbsp;\
+        <a href='{{ path_for('clienteeliminar') }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  $("#pagination-container").pagination({
+    dataSource: empresas,
+    pageSize: 5,
+    callback: function(data, pagination) {
+      var html = tableTemplating(data);
+      $("#data-container").html(html);
+    }
+  });
+</script>
+{% endblock %}

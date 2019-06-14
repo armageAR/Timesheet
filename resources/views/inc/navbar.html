@@ -1,0 +1,80 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Timesheet</h3>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li>
+      <a href="{{ path_for('home') }}">Inicio</a>
+    </li>
+    <li class="active">
+      <a
+        href="#homeSubmenu"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle"
+        >Administrador</a
+      >
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li>
+          <a href="{{ path_for('personas') }}">Personas</a>
+        </li>
+        <li>
+          <a href="{{ path_for('categorias') }}">Categorias</a>
+        </li>
+        <li>
+          <a href="#">Tipo Categorias</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a
+        href="#pageSubmenu"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle"
+        >Clientes</a
+      >
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li>
+          <a href="{{ path_for('clientes') }}">Empresas</a>
+        </li>
+        <li>
+          <a href="#">Contratos</a>
+        </li>
+        <li>
+          <a href="#">Centro de Costos</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a
+        href="#pageSubmenu"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle"
+        >Personal</a
+      >
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li>
+          <a href="#">Tripulantes</a>
+        </li>
+        <li>
+          <a href="#">Actividad</a>
+        </li>
+        <li>
+          <a href="#">Francos</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Timesheet</a>
+    </li>
+    <li>
+      <a href="#">Liquidaciones</a>
+    </li>
+    <li>
+      <a href="#">Ayuda</a>
+    </li>
+  </ul>
+</nav>

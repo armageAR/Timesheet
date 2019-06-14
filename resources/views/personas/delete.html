@@ -1,0 +1,80 @@
+{% extends 'layout.html' %} {% block title %}Eliminar Persona {% endblock %} {%
+block subtitle %} Eliminar Persona {% endblock %} {% block css %} {% endblock %}
+{%block body%}
+<form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        readonly
+        class="form-control"
+        id="inputEmail3"
+        value="Daniel"
+      />
+    </div>
+
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        readonly
+        class="form-control"
+        id="inputEmail3"
+        value="Sanpietro"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Legajo</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        readonly
+        class="form-control"
+        id="inputEmail3"
+        value="100039"
+      />
+    </div>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        readonly
+        class="form-control"
+        id="inputEmail3"
+        value="danielsanpietro@gmail.com"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"
+      >Nacionalidad</label
+    >
+    <div class="col-sm-4">
+      <input
+        type="text"
+        readonly
+        class="form-control"
+        id="inputEmail3"
+        value="Argentina"
+      />
+    </div>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Documento</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        readonly
+        class="form-control"
+        id="inputEmail3"
+        value="14325654"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row justify-content-center">
+    <a href="{{ path_for('personas') }}" class="btn btn-danger m-3">Eliminar</a>
+  </div>
+</form>
+
+{% endblock %} {% block javascripts %} {% endblock %}
