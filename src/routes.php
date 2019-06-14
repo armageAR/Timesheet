@@ -18,24 +18,17 @@ return function (App $app) {
         $app->get('/modificar/{id}', 'PersonaController:modificar')->setName('persona.modificar');
         $app->get('/eliminar/{id}', 'PersonaController:eliminar')->setName('persona.eliminar');
     });
+    $app->group('/clientes', function () use ($app) {
+        $app->get('/listar', 'ClienteController:listar')->setName('clientes');
+        $app->get('/crear', 'ClienteController:crear')->setName('cliente.crear');
+        $app->get('/ver/{id}', 'ClienteController:ver')->setName('cliente.ver');
+        $app->get('/modificar/{id}', 'ClienteController:modificar')->setName('cliente.modificar');
+        $app->get('/eliminar/{id}', 'ClienteController:eliminar')->setName('cliente.eliminar');
+    });
 
 
 
-    $app->get('/admin/clientes', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'clientes/index.html');
-    })->setName('clientes');
-    $app->get('/admin/cliente-crear', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'clientes/create.html');
-    })->setName('clientecrear');
-    $app->get('/admin/cliente-ver', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'clientes/view.html');
-    })->setName('clientever');
-    $app->get('/admin/cliente-modificar', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'clientes/update.html');
-    })->setName('clientemodificar');
-    $app->get('/admin/cliente-eliminar', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'clientes/delete.html');
-    })->setName('clienteeliminar');
+
 
 
 

@@ -34,4 +34,7 @@ return function (App $app) {
     $container['PersonaController'] = function ($c) {
         return new \App\Controllers\PersonaController($c);
     };
+    $container['ClienteController'] = function ($c) {
+        return new \App\Controllers\ClienteController($c);
+    };
 };
