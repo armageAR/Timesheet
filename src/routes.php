@@ -46,4 +46,11 @@ return function (App $app) {
         $app->get('/modificar/{id}', 'ActividadController:modificar')->setName('actividad.modificar');
         $app->get('/eliminar/{id}', 'ActividadController:eliminar')->setName('actividad.eliminar');
     });
+    $app->group('/contratos', function () use ($app) {
+        $app->get('/listar', 'ContratoController:listar')->setName('contratos');
+        $app->get('/crear', 'ContratoController:crear')->setName('contrato.crear');
+        $app->get('/ver/{id}', 'ContratoController:ver')->setName('contrato.ver');
+        $app->get('/modificar/{id}', 'ContratoController:modificar')->setName('contrato.modificar');
+        $app->get('/eliminar/{id}', 'ContratoController:eliminar')->setName('contrato.eliminar');
+    });
 };

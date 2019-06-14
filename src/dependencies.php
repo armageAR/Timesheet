@@ -46,4 +46,7 @@ return function (App $app) {
     $container['ActividadController'] = function ($c) {
         return new \App\Controllers\ActividadController($c);
     };
+    $container['ContratoController'] = function ($c) {
+        return new \App\Controllers\ContratoController($c);
+    };
 };
