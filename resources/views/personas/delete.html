@@ -5,6 +5,9 @@ block subtitle %} {{ titulo }} {% endblock %} {% block css %} {% endblock %}
   {{ include("personas/form.php") }}
   <div class="form-group row justify-content-center">
     <a href="{{ path_for('personas') }}" class="btn btn-danger m-3">Eliminar</a>
+    <a href="{{ path_for('personas') }}" class="btn btn-success m-3"
+      >Cancelar</a
+    >
   </div>
 </form>
 

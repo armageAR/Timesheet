@@ -2,10 +2,12 @@
 block subtitle %} {{ titulo }} {% endblock %} {% block css %} {% endblock %}
 {%block body%}
 <form>
-  {{ include("categorias/form.php") }}
+  {{ include("tipoCategorias/form.php") }}
 
   <div class="form-group row justify-content-center">
-    <a href="{{ path_for('categorias') }}" class="btn btn-primary m-3">Salir</a>
+    <a href="{{ path_for('tipoCategorias') }}" class="btn btn-primary m-3"
+      >Salir</a
+    >
   </div>
 </form>
 

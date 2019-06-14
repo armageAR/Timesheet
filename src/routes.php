@@ -25,26 +25,18 @@ return function (App $app) {
         $app->get('/modificar/{id}', 'ClienteController:modificar')->setName('cliente.modificar');
         $app->get('/eliminar/{id}', 'ClienteController:eliminar')->setName('cliente.eliminar');
     });
-
-
-
-
-
-
-
-    $app->get('/admin/categorias', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'categorias/index.html');
-    })->setName('categorias');
-    $app->get('/admin/categoria-crear', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'categorias/create.html');
-    })->setName('categoriacrear');
-    $app->get('/admin/categoria-ver', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'categorias/view.html');
-    })->setName('categoriaver');
-    $app->get('/admin/categoria-modificar', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'categorias/update.html');
-    })->setName('categoriamodificar');
-    $app->get('/admin/categoria-eliminar', function (Request $request, Response $response, array $args) {
-        return $this->view->render($response, 'categorias/delete.html');
-    })->setName('categoriaeliminar');
+    $app->group('/categorias', function () use ($app) {
+        $app->get('/listar', 'CategoriaController:listar')->setName('categorias');
+        $app->get('/crear', 'CategoriaController:crear')->setName('categoria.crear');
+        $app->get('/ver/{id}', 'CategoriaController:ver')->setName('categoria.ver');
+        $app->get('/modificar/{id}', 'CategoriaController:modificar')->setName('categoria.modificar');
+        $app->get('/eliminar/{id}', 'CategoriaController:eliminar')->setName('categoria.eliminar');
+    });
+    $app->group('/tipoCategorias', function () use ($app) {
+        $app->get('/listar', 'TipoCategoriaController:listar')->setName('tipoCategorias');
+        $app->get('/crear', 'TipoCategoriaController:crear')->setName('tipoCategoria.crear');
+        $app->get('/ver/{id}', 'TipoCategoriaController:ver')->setName('tipoCategoria.ver');
+        $app->get('/modificar/{id}', 'TipoCategoriaController:modificar')->setName('tipoCategoria.modificar');
+        $app->get('/eliminar/{id}', 'TipoCategoriaController:eliminar')->setName('tipoCategoria.eliminar');
+    });
 };

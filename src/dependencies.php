@@ -37,4 +37,10 @@ return function (App $app) {
     $container['ClienteController'] = function ($c) {
         return new \App\Controllers\ClienteController($c);
     };
+    $container['CategoriaController'] = function ($c) {
+        return new \App\Controllers\CategoriaController($c);
+    };
+    $container['TipoCategoriaController'] = function ($c) {
+        return new \App\Controllers\TipoCategoriaController($c);
+    };
 };

@@ -23,7 +23,10 @@
           <a href="{{ path_for('categorias') }}">Categorias</a>
         </li>
         <li>
-          <a href="#">Tipo Categorias</a>
+          <a href="{{ path_for('tipoCategorias') }}">Tipo Categorias</a>
+        </li>
+        <li>
+          <a href="#">Actividades</a>
         </li>
       </ul>
     </li>
@@ -49,18 +52,15 @@
     </li>
     <li>
       <a
-        href="#pageSubmenu"
+        href="#personalSubmenu"
         data-toggle="collapse"
         aria-expanded="false"
         class="dropdown-toggle"
         >Personal</a
       >
-      <ul class="collapse list-unstyled" id="pageSubmenu">
+      <ul class="collapse list-unstyled" id="personalSubmenu">
         <li>
           <a href="#">Tripulantes</a>
-        </li>
-        <li>
-          <a href="#">Actividad</a>
         </li>
         <li>
           <a href="#">Francos</a>

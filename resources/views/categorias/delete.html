@@ -1,58 +1,15 @@
-{% extends 'layout.html' %} {% block title %}Eliminar Categoria {% endblock %}
-{% block subtitle %} Eliminar Categoria {% endblock %} {% block css %} {%
-endblock %} {%block body%}
+{% extends 'layout.html' %} {% block title %}{{ titulo }} {% endblock %} {%
+block subtitle %} {{ titulo }} {% endblock %} {% block css %} {% endblock %}
+{%block body%}
 <form>
-  <div class="form-group row">
-    <label for="inputText" class="col-sm-2 col-form-label">Codigo</label>
-    <div class="col-sm-4">
-      <input
-        type="text"
-        class="form-control"
-        readonly
-        id="inputText"
-        value="CAPUMGAS01"
-      />
-    </div>
-
-    <label for="inputText" class="col-sm-2 col-form-label">Detalle</label>
-    <div class="col-sm-4">
-      <input
-        type="text"
-        class="form-control"
-        readonly
-        id="inputText"
-        value="CAPITÁN DE ULTRAMAR"
-      />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputText" class="col-sm-2 col-form-label">Convenio</label>
-    <div class="col-sm-4">
-      <input
-        type="text"
-        class="form-control"
-        readonly
-        id="inputText"
-        value="CCUOMM"
-      />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputText" class="col-sm-2 col-form-label"
-      >Tipo Categoria</label
-    >
-    <div class="col-sm-4">
-      <select id="inputState" class="form-control" readonly>
-        <option>Seleccionar</option>
-        <option selected>Bandera Argentina</option>
-        <option>Bandera Belga</option>
-      </select>
-    </div>
-  </div>
-
+  {{ include("categorias/form.php") }}
   <div class="form-group row justify-content-center">
-    <a href="{{ path_for('categorias') }}" class="btn btn-danger m-3">Borrar</a>
-    <a href="{{ path_for('categorias') }}" class="btn btn-success m-3">Salir</a>
+    <a href="{{ path_for('categorias') }}" class="btn btn-danger m-3"
+      >Eliminar</a
+    >
+    <a href="{{ path_for('categorias') }}" class="btn btn-success m-3"
+      >Cancelar</a
+    >
   </div>
 </form>
 
