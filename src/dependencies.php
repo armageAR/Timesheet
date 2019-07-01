@@ -45,4 +45,7 @@ return function (App $app) {
     $container['GrupoController'] = function ($c) {
         return new \App\Controllers\GrupoController($c);
     };
+    $container['FrancoController'] = function ($c) {
+        return new \App\Controllers\FrancoController($c);
+    };
 };

@@ -74,4 +74,10 @@ return function (App $app) {
         $app->get('/modificar/{id}', 'GrupoController:modificar')->setName('grupo.modificar');
         $app->get('/eliminar/{id}', 'GrupoController:eliminar')->setName('grupo.eliminar');
     });
+    $app->group('/francos', function () use ($app) {
+        $app->get('/listar', 'FrancoController:listar')->setName('francos');
+        $app->get('/ver/{id}', 'FrancoController:ver')->setName('franco.ver');
+        $app->get('/sumar/{id}', 'FrancoController:sumar')->setName('franco.sumar');
+        $app->get('/restar/{id}', 'FrancoController:restar')->setName('franco.restar');
+    });
 };
