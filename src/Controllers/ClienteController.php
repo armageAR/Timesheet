@@ -25,7 +25,9 @@ class ClienteController extends Controller
             'legajo' => '10145',
             'fiscalTipo' => 'CUIL',
             'fiscalNumero' => '20-25258147-3',
-            'idioma' => 'Castellano'
+            'idioma' => 'Castellano',
+            'iva' => 'Responsable Inscripto',
+            'group' => 'MSC'
         ],
         [
             'id' => 2,
@@ -45,7 +47,9 @@ class ClienteController extends Controller
             'legajo' => '10145',
             'fiscalTipo' => 'CUIL',
             'fiscalNumero' => '20-25258147-3',
-            'idioma' => 'Castellano'
+            'idioma' => 'Castellano',
+            'iva' => 'Responsable Inscripto',
+            'group' => 'MSC'
         ],
         [
             'id' => 3,
@@ -65,7 +69,9 @@ class ClienteController extends Controller
             'legajo' => '10145',
             'fiscalTipo' => 'CUIL',
             'fiscalNumero' => '20-25258147-3',
-            'idioma' => 'Castellano'
+            'idioma' => 'Castellano',
+            'iva' => 'Responsable Inscripto',
+            'group' => 'MSC'
         ],
         [
             'id' => 4,
@@ -85,7 +91,9 @@ class ClienteController extends Controller
             'legajo' => '10145',
             'fiscalTipo' => 'CUIL',
             'fiscalNumero' => '20-25258147-3',
-            'idioma' => 'Castellano'
+            'idioma' => 'Castellano',
+            'iva' => 'Responsable Inscripto',
+            'group' => 'MSC'
         ]
     ];
 

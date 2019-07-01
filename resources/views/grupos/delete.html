@@ -1,0 +1,12 @@
+{% extends 'layout.html' %} {% block title %}{{ titulo }} {% endblock %} {%
+block subtitle %} {{ titulo }} {% endblock %} {% block css %} {% endblock %}
+{%block body%}
+<form>
+  {{ include("grupos/form.php") }}
+  <div class="form-group row justify-content-center">
+    <a href="{{ path_for('grupos') }}" class="btn btn-danger m-3">Eliminar</a>
+    <a href="{{ path_for('grupos') }}" class="btn btn-success m-3">Cancelar</a>
+  </div>
+</form>
+
+{% endblock %} {% block javascripts %} {% endblock %}

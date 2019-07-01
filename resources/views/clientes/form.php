@@ -1,4 +1,32 @@
 <div class="form-group row">
+    <label for="inputText" class="col-sm-2 col-form-label">Grupo</label>
+    <div class="col-sm-4">
+        <select id="inputState" {% if state == 'disabled' %}disabled{% endif %} class="form-control">
+            {% if entity.group %}
+            <option selected>{{entity.group}}</option>
+            {% else %}
+            <option selected>Seleccionar...</option>
+            {% endif %}
+            <option>Maersk</option>
+            <option>MSC</option>
+        </select>
+    </div>
+    <label for="inputText" class="col-sm-2 col-form-label">Condición IVA</label>
+    <div class="col-sm-4">
+        <select id="inputState" {% if state == 'disabled' %}disabled{% endif %} class="form-control">
+            {% if entity.iva %}
+            <option selected>{{entity.iva}}</option>
+            {% else %}
+            <option selected>Seleccionar...</option>
+            {% endif %}
+            <option>Responsable Inscripto</option>
+            <option>Monotributo</option>
+        </select>
+    </div>
+</div>
+
+
+<div class="form-group row">
     <label for="inputText" class="col-sm-2 col-form-label">Razon Social</label>
     <div class="col-sm-8">
         <input type="text" {% if state == 'disabled' %}readonly{% endif %} class="form-control" id="inputText" value="{{entity.razonSocial}}" />
@@ -60,14 +88,7 @@
         </select>
     </div>
     <div class="col-sm-4">
-        <select id="inputState" {% if state == 'disabled' %}disabled{% endif %} class="form-control">
-            {% if entity.dirCiudad %}
-            <option selected>{{entity.dirCiudad}}</option>
-            {% else %}
-            <option selected>Ciudad</option>
-            {% endif %}
-            <option>...</option>
-        </select>
+        <input type="text" {% if state == 'disabled' %}readonly{% endif %} class="form-control text-right" id="inputText" value="{{entity.dirCiudad}}" />
     </div>
 </div>
 <div class="form-group row">

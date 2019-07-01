@@ -4,8 +4,8 @@ block subtitle %} {{ titulo }} {% endblock %} {% block css %}
 
 {% endblock %} {% block body%}
 <div class="row justify-content-between m-2">
-  <a href="{{ path_for('cliente.crear') }}" class="btn btn-danger col-md-2 "
-    >Nuevo Cliente</a
+  <a href="{{ path_for('tripulante.crear') }}" class="btn btn-danger col-md-2 "
+    >Nuevo Tripulante</a
   >
   <input
     class="form-control   col-md-3"
@@ -24,19 +24,19 @@ block subtitle %} {{ titulo }} {% endblock %} {% block css %}
 {% endblock %} {% block javascripts %}
 <script src="{{ base_url() }}/js/pagination.min.js"></script>
 <script>
-  let clientes = {{clientes|json_encode|raw}};
+  let tripulantes = {{tripulantes|json_encode|raw}};
 
 
   function tableTemplating(data) {
     html =
     '<table class="table table-striped table-bordered"> \
-                    <thead class = "thead-dark" > <tr class="text-center">\
-                            <th style="width:2%" scope="col">#</th>\
-                            <th scope="col">Razon Social</th>\
-                            <th scope="col">Grupo</th>\
-                            <th scope="col">ID Fiscal</th>\
-                            <th scope="col">Radicación</th>\
-                            <th scope="col">Nacionalidad</th>\
+        <thead class = "thead-dark" > <tr class="text-center">\
+                            <th scope="col">#</th>\
+                            <th scope="col">Persona</th>\
+                            <th scope="col">Contrato</th>\
+                            <th scope="col">Inicio</th>\
+                            <th scope="col">Fin</th>\
+                            <th scope="col">Centros de Costo</th>\
                             <th scope="col">Acciones</th>\
                         </tr>\
                     </thead>\
@@ -44,22 +44,22 @@ block subtitle %} {{ titulo }} {% endblock %} {% block css %}
     $.each(data, function(index, item) {
 
       html +=
-        "<tr><td class='text-center'>" +
+        '<tr><td class="text-center">' +
         item.id +
         "</td><td>" +
-        item.razonSocial +
-        "</td><td>" +
-        item.group +
-        "</td><td class='text-right'>" +
-        item.idFiscal+
-        "</td><td>" +
-        item.dirPais + "(" + item.dirEstado + ")" +
-        "</td><td>" +
-        item.nacionalidad +
+        item.persona.nombre + ' ' + item.persona.apellido +
         "</td><td class='text-center'>" +
-        "<a href='{{ path_for('cliente.ver', { 'id': 'index' }) }}'><i class='fas fa-eye'></i></a>&nbsp;\
-        <a href='{{ path_for('cliente.modificar', { 'id': 'index' }) }}'><i class='fas fa-edit'></i></a>&nbsp;\
-        <a href='{{ path_for('cliente.eliminar', { 'id': 'index' }) }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
+        item.contrato.referencia +
+        "</td><td class='text-center'>" +
+        item.fechaInicio +
+        "</td><td class='text-center'>" +
+        item.fechaFin +
+        "</td><td class='text-center'>" +
+        item.centrocostos.nombre +
+        "</td><td class='text-center'>" +
+        "<a href='{{ path_for('tripulante.ver', { 'id': 'index' }) }}'><i class='fas fa-eye'></i></a>&nbsp;\
+        <a href='{{ path_for('tripulante.modificar', { 'id': 'index' }) }}'><i class='fas fa-edit'></i></a>&nbsp;\
+        <a href='{{ path_for('tripulante.eliminar', { 'id': 'index' }) }}'><i class='fas fa-trash-alt'></i></a></td></tr>";
         html = html.replace(/index/g, index);
     });
     html += "</tbody></table>";
@@ -68,7 +68,7 @@ block subtitle %} {{ titulo }} {% endblock %} {% block css %}
   }
 
   $("#pagination-container").pagination({
-    dataSource: clientes,
+    dataSource: tripulantes,
     pageSize: 5,
     callback: function(data, pagination) {
       var html = tableTemplating(data);

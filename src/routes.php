@@ -53,4 +53,25 @@ return function (App $app) {
         $app->get('/modificar/{id}', 'ContratoController:modificar')->setName('contrato.modificar');
         $app->get('/eliminar/{id}', 'ContratoController:eliminar')->setName('contrato.eliminar');
     });
+    $app->group('/centrocostos', function () use ($app) {
+        $app->get('/listar', 'CentroCostosController:listar')->setName('centrocostos');
+        $app->get('/crear', 'CentroCostosController:crear')->setName('centrocostos.crear');
+        $app->get('/ver/{id}', 'CentroCostosController:ver')->setName('centrocostos.ver');
+        $app->get('/modificar/{id}', 'CentroCostosController:modificar')->setName('centrocostos.modificar');
+        $app->get('/eliminar/{id}', 'CentroCostosController:eliminar')->setName('centrocostos.eliminar');
+    });
+    $app->group('/tripulantes', function () use ($app) {
+        $app->get('/listar', 'TripulanteController:listar')->setName('tripulantes');
+        $app->get('/crear', 'TripulanteController:crear')->setName('tripulante.crear');
+        $app->get('/ver/{id}', 'TripulanteController:ver')->setName('tripulante.ver');
+        $app->get('/modificar/{id}', 'TripulanteController:modificar')->setName('tripulante.modificar');
+        $app->get('/eliminar/{id}', 'TripulanteController:eliminar')->setName('tripulante.eliminar');
+    });
+    $app->group('/grupos', function () use ($app) {
+        $app->get('/listar', 'GrupoController:listar')->setName('grupos');
+        $app->get('/crear', 'GrupoController:crear')->setName('grupo.crear');
+        $app->get('/ver/{id}', 'GrupoController:ver')->setName('grupo.ver');
+        $app->get('/modificar/{id}', 'GrupoController:modificar')->setName('grupo.modificar');
+        $app->get('/eliminar/{id}', 'GrupoController:eliminar')->setName('grupo.eliminar');
+    });
 };

@@ -36,4 +36,13 @@ return function (App $app) {
     $container['ContratoController'] = function ($c) {
         return new \App\Controllers\ContratoController($c);
     };
+    $container['CentroCostosController'] = function ($c) {
+        return new \App\Controllers\CentroCostosController($c);
+    };
+    $container['TripulanteController'] = function ($c) {
+        return new \App\Controllers\TripulanteController($c);
+    };
+    $container['GrupoController'] = function ($c) {
+        return new \App\Controllers\GrupoController($c);
+    };
 };

@@ -9,6 +9,7 @@ class ContratoController extends Controller
     private $contratos = [
         [
             'id' => 1,
+            'numero' => 1234,
             'referencia' => "Contrato Oil",
             'cliente' => "Oil Petroleo",
             'fechaInicio' => "2018-04-10",
@@ -17,9 +18,11 @@ class ContratoController extends Controller
             'centroCostos' => [
                 'Buque 1', 'Buque 2', 'Proyecto A'
             ],
-            'actividad' => ['EM', 'AO', 'AC']
+            'actividad' => ['EM', 'AO', 'AC'],
+            'tipoCategorias' => ['BA', 'BB']
         ], [
             'id' => 2,
+            'numero' => 5478,
             'referencia' => "Temporal",
             'cliente' => "Comañia del Sol SL",
             'fechaInicio' => "2017-05-11",
@@ -28,7 +31,9 @@ class ContratoController extends Controller
             'centroCostos' => [
                 'Buque Rayo'
             ],
-            'actividad' => ['EM', 'FT', 'AC', 'SG']
+            'actividad' => ['EM', 'FT', 'AC', 'SG'],
+            'tipoCategorias' => ['BA']
+
         ],
     ];
 

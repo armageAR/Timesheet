@@ -162,6 +162,7 @@ class PersonaController extends Controller
         ]
     ];
 
+
     public function listar($request, $response)
     {
         $data =
