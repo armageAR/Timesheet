@@ -101,7 +101,7 @@ class ClienteController extends Controller
     {
         $data =
             [
-                'titulo' => 'Clientes',
+                'titulo' => 'Empresas',
                 'clientes' => $this->clientes
 
             ];
@@ -110,25 +110,25 @@ class ClienteController extends Controller
 
     public function crear($request, $response)
     {
-        $data = ['titulo' => 'Crear Cliente'];
+        $data = ['titulo' => 'Crear Empresa'];
         return $this->view->render($response, 'clientes/create.html', $data);
     }
 
     public function ver($request, $response, $args)
     {
-        $data = ['state' => 'disabled', 'titulo' => 'Mostrar Cliente', 'entity' => $this->clientes[$args['id']]];
+        $data = ['state' => 'disabled', 'titulo' => 'Mostrar Empresa', 'entity' => $this->clientes[$args['id']]];
         return $this->view->render($response, 'clientes/view.html', $data);
     }
 
     public function modificar($request, $response, $args)
     {
-        $data = ['state' => 'enabled', 'titulo' => 'Modificar Cliente', 'entity' => $this->clientes[$args['id']]];
+        $data = ['state' => 'enabled', 'titulo' => 'Modificar Empresa', 'entity' => $this->clientes[$args['id']]];
         return $this->view->render($response, 'clientes/update.html', $data);
     }
 
     public function eliminar($request, $response, $args)
     {
-        $data = ['state' => 'disabled', 'titulo' => 'Eliminar Cliente', 'entity' => $this->clientes[$args['id']]];
+        $data = ['state' => 'disabled', 'titulo' => 'Eliminar Empresa', 'entity' => $this->clientes[$args['id']]];
         return $this->view->render($response, 'clientes/delete.html', $data);
     }
 }

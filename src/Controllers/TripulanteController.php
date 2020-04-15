@@ -86,7 +86,7 @@ class TripulanteController extends Controller
 
     public function eliminar($request, $response, $args)
     {
-        $data = ['state' => 'disabled', 'titulo' => 'Eliminar Tripulante', 'entity' => $this->tripulantes[$args['id']]];
+        $data = ['state' => 'disabled', 'titulo' => 'Desafectar Tripulante', 'entity' => $this->tripulantes[$args['id']]];
         return $this->view->render($response, 'tripulantes/delete.html', $data);
     }
 }

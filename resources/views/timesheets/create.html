@@ -1,0 +1,177 @@
+{% extends 'layout.html' %} {% block title %}{{ titulo }} {% endblock %} {%
+block subtitle %} {{ titulo }} {% endblock %} {% block css %} {% endblock %}
+{%block body%}
+<form>
+  <div class="row ">
+    <p class="col-sm-1 text-right text-dark">Cliente:</p>
+    <p class="col-sm-3 text-dark">Oil Petroleo</p>
+
+    <p class="col-sm-1 text-dark">Contrato:</p>
+    <p class="col-sm-3 text-dark">Contrato Oil</p>
+
+    <p class="col-sm-1 text-right text-dark">CC:</p>
+    <p class="col-sm-3 text-dark">Barco Alfa</p>
+  </div>
+  <div class="row">
+    <p class="col-sm-1 text-dark">Fecha:</p>
+    <p class="col-sm-3 text-dark font-weight-bold">16/05/2019</p>
+  </div>
+
+  <div>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr class="text-center">
+          <th scope="col">Legajo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Sindicato</th>
+          <th scope="col">Bandera Belga</th>
+          <th scope="col">Bandera Argentina</th>
+          <th scope="col">Condicion Laboral</th>
+          <th scope="col">Actividad</th>
+          <th scope="col"><i class="fas fa-sticky-note"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10038</td>
+          <td>BALLESTERO, Alejandro</td>
+          <td>CCUOMM</td>
+          <td>
+            <select class="form-control">
+              <option selected>Master</option>
+              <option>CH/O</option>
+              <option>2/O</option>
+              <option>3/O </option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control">
+              <option selected>Capitán</option>
+              <option>1er Oficial de Cubierta</option>
+              <option>2do Oficial de Cubierta</option>
+              <option>3er Oficial de Cubierta</option>
+            </select>
+          </td>
+          <td>Permanente</td>
+          <td>
+            <select class="form-control">
+              <option selected>--</option>
+              <option>EF</option>
+              <option>EM</option>
+              <option>FR</option>
+              <option>RP</option>
+              <option>X</option>
+            </select>
+          </td>
+          <td><i class="fas fa-sticky-note"></i></td>
+        </tr>
+        <tr>
+          <td>10105</td>
+          <td>BUGLIONE, Daniel</td>
+          <td>CCUOMM</td>
+          <td>
+            <select class="form-control">
+              <option selected>Master</option>
+              <option>CH/O</option>
+              <option>2/O</option>
+              <option>3/O </option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control">
+              <option selected>Capitán</option>
+              <option>1er Oficial de Cubierta</option>
+              <option>2do Oficial de Cubierta</option>
+              <option>3er Oficial de Cubierta</option>
+            </select>
+          </td>
+          <td>Permanente</td>
+          <td>
+            <select class="form-control">
+              <option selected>--</option>
+              <option>EF</option>
+              <option>EM</option>
+              <option>FR</option>
+              <option>RP</option>
+              <option>X</option>
+            </select>
+          </td>
+          <td><i class="fas fa-sticky-note"></i></td>
+        </tr>
+        <tr>
+          <td>10042</td>
+          <td>GAUDIÑO,Juan Carlos</td>
+          <td>CCUOMM</td>
+          <td>
+            <select class="form-control">
+              <option>Master</option>
+              <option>CH/O</option>
+              <option selected>2/O</option>
+              <option>3/O </option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control">
+              <option>Capitán</option>
+              <option>1er Oficial de Cubierta</option>
+              <option selected>2do Oficial de Cubierta</option>
+              <option>3er Oficial de Cubierta</option>
+            </select>
+          </td>
+          <td>Permanente</td>
+          <td>
+            <select class="form-control">
+              <option selected>--</option>
+              <option>EF</option>
+              <option>EM</option>
+              <option>FR</option>
+              <option>RP</option>
+              <option>X</option>
+            </select>
+          </td>
+          <td><i class="fas fa-sticky-note"></i></td>
+        </tr>
+        <tr>
+          <td>10158</td>
+          <td>FLORES, Roberto</td>
+          <td>CCUOMM</td>
+          <td>
+            <select class="form-control">
+              <option>Master</option>
+              <option>CH/O</option>
+              <option>2/O</option>
+              <option selected>3/O </option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control">
+              <option>Capitán</option>
+              <option>1er Oficial de Cubierta</option>
+              <option selected>2do Oficial de Cubierta</option>
+              <option>3er Oficial de Cubierta</option>
+            </select>
+          </td>
+          <td>Permanente</td>
+          <td>
+            <select class="form-control">
+              <option selected>--</option>
+              <option>EF</option>
+              <option>EM</option>
+              <option>FR</option>
+              <option>RP</option>
+              <option>X</option>
+            </select>
+          </td>
+          <td><i class="fas fa-sticky-note"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="form-group row justify-content-center">
+    <a href="{{ path_for('francos') }}" class="btn btn-danger m-3">Cancelar</a>
+    <a href="{{ path_for('francos') }}" class="btn btn-primary m-3">Grabar</a>
+  </div>
+</form>
+
+{% endblock %} {% block javascripts %} {% endblock %}

@@ -21,7 +21,7 @@ class TipoCategoriaController extends Controller
     {
         $data =
             [
-                'titulo' => 'Categorias',
+                'titulo' => 'Tipo Categorias',
                 'tipoCategorias' => $this->tipoCategorias
 
             ];
